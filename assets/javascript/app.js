@@ -46,16 +46,44 @@ $(document).ready(function () {
  // Initialize Firebase //
 
  var firebaseConfig = {
-    apiKey:"",
-    authDomain:"",
-    databaseURL: "",
-    projectId: "",
+    apiKey: "AIzaSyBnFFHuk1PVtDan50yKCPIMgeViWlA3rXc",
+    authDomain: "greyjoy-project1.firebaseapp.com",
+    databaseURL: "https://greyjoy-project1.firebaseio.com",
+    projectId: "greyjoy-project1",
     storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
-};
+    messagingSenderId: "492997344720",
+    appId: "1:492997344720:web:76ccd3669451188c1d4dd5",
+    measurementId: "G-B88N2JWR6L"
+  };
+  
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
-firebase.initializeApp(firebaseConfig);
+  // Create Account //
+
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    
+  });
+
+  // SignIn //
+
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    
+  });
+
+  // SignOut //
+
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+  }).catch(function(error) {
+    // An error happened.
+  });
 
 // Assign the reference to the database to a variable //
 
