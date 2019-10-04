@@ -39,68 +39,72 @@ $(document).ready(function () {
             // then parse.info.from.object into a Variable to display on screen//
 
 
-            
+
         });
     };
 
- // Initialize Firebase //
+    // Initialize Firebase //
 
- var firebaseConfig = {
-    apiKey:"",
-    authDomain:"",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
-};
+    var firebaseConfig = {
+        apiKey: "AIzaSyBnFFHuk1PVtDan50yKCPIMgeViWlA3rXc",
+        authDomain: "greyjoy-project1.firebaseapp.com",
+        databaseURL: "https://greyjoy-project1.firebaseio.com",
+        projectId: "greyjoy-project1",
+        storageBucket: "",
+        messagingSenderId: "492997344720",
+        appId: "1:492997344720:web:76ccd3669451188c1d4dd5",
+        measurementId: "G-B88N2JWR6L"
+    };
 
-firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 
-// Assign the reference to the database to a variable //
+    // Assign the reference to the database to a variable //
 
-var database = firebase.database();
+    var database = firebase.database();
 
-$("#submit").on("click", function (event) {
-
-    event.preventDefault();
-
-    // variables for information we want to store on our database //
-    var example = $("#random-info").val().trim();
-   
-
-    database
-        .ref()
-        .push({
-            //push info from variables to database //
-            randomInfo: example,
-          
-        });
-
-
-        
-        database
-        .ref()
-        .on("child_added", function (snapshot) {
-            
-            let snapshotValue = snapshot.val();
-            
-            console.log(snapshot.val());
-            
+    // Submit Button To Store Information In Firebase //
     
-            var  randomInfo = $("<td>").text(snapshotValue.randomInfo);
-           
-            
-            let newRow = $("<tr>");
+    $("#submit").on("click", function (event) {
 
-            newRow.append(randomInfo);
-            
+        event.preventDefault();
 
-        });
+        // variables for information we want to store on our database //
+        var example = $("#random-info").val().trim();
 
-    $("#whatever we want to display").append(newRow);
 
-});
+        database
+            .ref()
+            .push({
+                //push info from variables to database //
+                randomInfo: example,
+
+            });
+
+
+
+        database
+            .ref()
+            .on("child_added", function (snapshot) {
+
+                let snapshotValue = snapshot.val();
+
+                console.log(snapshot.val());
+
+
+                var randomInfo = $("<td>").text(snapshotValue.randomInfo);
+
+
+                let newRow = $("<tr>");
+
+                newRow.append(randomInfo);
+
+
+            });
+
+        $("#whatever we want to display").append(newRow);
+
+    });
 
 
 
