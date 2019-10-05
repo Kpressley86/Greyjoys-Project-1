@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Google Fonts: Roboto and Bitter -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
+
+
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
@@ -42,7 +47,7 @@
 </head>
 
 <body>
-    <header class="container-fluid bg-dark pt-4 pb-4">
+    <header class="container-fluid pt-4 pb-4" style="background: rgba(0,0,0,0.9);">
         <div class="row">
             <div class="col-md-8">
                 <h1 class="text-center text-white">PRO GOLF STATISTICS ⛳</h1>
@@ -99,7 +104,6 @@
                 <div class="col-lg-1">
                     <button type="submit" class="btn btn-secondary" id="search">Search</button>
                 </div>
-
             </div>
 
             <br>
@@ -175,8 +179,94 @@
 
 
             </div>
-
         </div>
+        <br>
+        <br>
+        <!-- Row 2 : Golfer Information -->
+        <div class="row">
+            <!-- Column 1: Player Image -->
+            <div class="col-md-3">
+                <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?v=1530129081"
+                    alt="Player Image">
+            </div>
+            <!-- Column 2 : Player Info -->
+            <div class="col-md-9">
+                <!-- Row 1 : Table Titles -->
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="bg-light text-dark">
+                            <h3>Golfer Information</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="bg-light text-dark">
+                            <h3>Upcoming Tournaments</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row 2 Tables -->
+                <div class="row">
+                    <div class="col-lg-5">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Player Name:</th>
+                                    <td id="playerName"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Height:</th>
+                                    <td id="height">0</td>
+                                <tr>
+                                    <th scope="row">Weight:</th>
+                                    <td id="weight">0</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Country:</th>
+                                    <td id="country"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-7">
+                        <table class="table table-borderless">
+                            <thead >
+                                <tr>
+                                    <th scope="col">Tournament</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <!-- <th scope="row">1</th> -->
+                                    <td>Masters</td>
+                                    <td>Aug 2020</td>
+                                    <td>Augusta, GA, USA</td>
+                                </tr>
+                                <tr>
+                                    <!-- <th scope="row">2</th> -->
+                                    <td>St. Jude Classic</td>
+                                    <td>June 2020</td>
+                                    <td>Memphis, TN, USA</td>
+                                </tr>
+                                <tr>
+                                    <!-- <th scope="row">3</th> -->
+                                    <td>Waste Management Open</td>
+                                    <td>October 2020</td>
+                                    <td>Phoenix, AZ, USA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <footer class="footer greyjoy-footer">
+        <div class="container-fluid bg-dark text-light">&copy Copyright 2019</div>
+    </footer>
         <br>
 
 
