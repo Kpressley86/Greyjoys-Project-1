@@ -13,6 +13,9 @@
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css">
 
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -31,13 +34,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
         </script>
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <!-- jQuery -->
 
-    <!-- our js link -->
+
+    <!-- Our js link -->
     <script src="./assets/javascript/app.js"></script>
 </head>
 
@@ -48,130 +48,223 @@
                 <h1 class="text-center text-white">PRO GOLF STATISTICS ⛳</h1>
             </div>
 
-            <div class="col-md-4">
-                <div class="dropdown float-right pt-2 pr-2 ">
-                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Account Information
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Name</a>
-                        <a class="dropdown-item" href="#">Thing 1</a>
-                        <a class="dropdown-item" href="#">Thing 2</a>
-                    </div>
-                </div>
+            <div class="nav-wrapper container">
+
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li class="logged-in" style="display: none;">
+                        <a href="#" class="grey-text" id="logout">Logout</a>
+                    </li>
+                    <li class="logged-in" style="display: none;">
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-create"> &#9971; Pro
+                            Stats</a>
+                    </li>
+                    <li class="logged-out" style="display: none;">
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+                    </li>
+                    <li class="logged-out" style="display: none;">
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+                    </li>
+                </ul>
             </div>
-        </div>
         </div>
     </header>
     <br>
     <br>
-    <div class="container background-color-login pt-4 pb-3">
 
-        <div class="row">
-
-            <div class="col-lg-3">
-                <!-- year input -->
-                <div class="form-group">
-                    <select class="form-control" id="searchYear">
-                        <option selected>2019</option>
-                        <option>2018</option>
-                        <option>2017</option>
-                    </select>
-                </div>
-
-            </div>
-            <div class="col-lg-8">
-                <!-- seach bar -->
-                <div class="form-group">
-                    <input type="text" class="form-control" id="searchName" placeholder="Search Golfer Name">
-                </div>
-            </div>
-            <div class="col-lg-1">
-                <button type="submit" class="btn btn-secondary" id="search">Search</button>
-            </div>
-
-        </div>
+    <h3 class="logged-out center-align" style="display: none;">Please Login to Search Your Favorite Golfers</h2>
 
         <br>
         <br>
-        <div class="row">
+        <div class="container logged-in background-color-login pt-4 pb-3">
 
-            <div class="col-md-3">
-                <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?v=1530129081"
-                    alt="Player Image">
-            </div>
-            <div class="col-md-4">
-                <table class="table table-hover table-dark">
-                    <thead>
-                        <tr>
-                            <th scope="col">Golfer Information</th>
+            <div class="row">
 
+                <div class="col-lg-3">
+                    <!-- year input -->
+                    <div class="form-group">
+                        <select class="form-control" id="searchYear">
+                            <option selected>2019</option>
+                            <option>2018</option>
+                            <option>2017</option>
+                        </select>
+                    </div>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Player Name:</th>
-                            <td id="playerName"></td>
+                </div>
+                <div class="col-lg-8">
+                    <!-- seach bar -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="searchName" placeholder="Search Golfer Name">
+                    </div>
+                </div>
+                <div class="col-lg-1">
+                    <button type="submit" class="btn btn-secondary" id="search">Search</button>
+                </div>
 
-                        </tr>
-                        <tr>
-                            <th scope="row">Height:</th>
-                            <td id="height">0</td>
-
-                        <tr>
-                            <th scope="row">Weight:</th>
-                            <td id="weight">0</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">Country:</th>
-                            <td id="country"></td>
-
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-5">
-                <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                            <th scope="col text-center">Standings</th>
-
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
 
+            <br>
+            <br>
+            <div class="row">
+
+                <div class="col-md-3">
+                    <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?v=1530129081"
+                        alt="Player Image">
+                </div>
+                <div class="col-md-4">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Golfer Information</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Player Name:</th>
+                                <td id="playerName"></td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Height:</th>
+                                <td id="height">0</td>
+
+                            <tr>
+                                <th scope="row">Weight:</th>
+                                <td id="weight">0</td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">Country:</th>
+                                <td id="country"></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-5">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th scope="col text-center">Standings</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
 
         </div>
-
-    </div>
-    <br>
+        <br>
 
 
+        <!-- SIGN UP MODAL -->
+        <div id="modal-signup" class="modal">
+            <div class="modal-content">
+                <h4>Sign Up</h4><br />
+                <form id="signup-form">
+                    <div class="input-field">
+                        <input type="email" id="signup-email" required />
+                        <label for="signup-email">Email Address</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signup-password" required />
+                        <label for="signup-password">Create Password</label>
+                    </div>
+                    <button class="btn yellow darken-2 z-depth-0">Sign Up</button>
+                    <p class="error pink-text center-align"></p>
+                </form>
+            </div>
+        </div>
+        <!-- LOGIN MODAL -->
+        <div id="modal-login" class="modal">
+            <div class="modal-content">
+                <h4>Login</h4><br />
+                <form id="login-form">
+                    <div class="input-field">
+                        <input type="email" id="login-email" required />
+                        <label for="login-email">Email address</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="login-password" required />
+                        <label for="login-password">Your password</label>
+                    </div>
+                    <button class="btn yellow darken-2 z-depth-0">Login</button>
+                    <p class="error pink-text center-align"></p>
+                </form>
+            </div>
+        </div>
+        <!-- CREATE SEARCH FORM MODAL -->
+        <div id="modal-create" class="modal">
+            <div class="modal-content">
+                <form id="create-form">
+                    <div class="input-field">
+                        <input type="text" id="name" required>
+                        <label for="title">Player Name</label>
+                    </div>
+                    <div class="input-field">
+                        <textarea id="content" class="materialize-textarea" required></textarea>
+                        <label for="year">Year</label>
+                    </div>
+                    <button class="btn yellow darken-2 z-depth-0">Search</button>
+                </form>
+            </div>
+        </div>
 
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-functions.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
+
+        <script>
+
+            // Initialize Firebase //
+            var config = {
+                apiKey: "AIzaSyBnFFHuk1PVtDan50yKCPIMgeViWlA3rXc",
+                authDomain: "greyjoy-project1.firebaseapp.com",
+                databaseURL: "https://greyjoy-project1.firebaseio.com",
+                projectId: "greyjoy-project1",
+                storageBucket: "gs://greyjoy-project1.appspot.com/",
+                messagingSenderId: "492997344720",
+                appId: "1:492997344720:web:76ccd3669451188c1d4dd5",
+                measurementId: "G-B88N2JWR6L"
+            };
+
+            firebase.initializeApp(config);
+
+            // Auth and Firestore References //
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+            const functions = firebase.functions();
+
+        </script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./assets/javascript/auth.js"></script>
+        <script src="./assets/javascript/index.js"></script>
 </body>
 
 </html>
