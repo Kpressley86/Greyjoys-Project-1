@@ -1,6 +1,8 @@
 body {
     background-image: url("https://i.pinimg.com/originals/f2/56/fa/f256fa53f4a71faeafdc7d83ece05548.jpg");
     background-size: cover; 
+
+    font-family: 'Times New Roman', Times, serif;
 }
 .background-color-login {
     background: rgba(0,0,0,0.7);
@@ -15,4 +17,14 @@ form {
 h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 450%;
+    font-weight: bold; 
+}
+
+table {
+    background-color: white;
+}
+
+img {
+    height: 300px;
+    width: 300px;
 }
