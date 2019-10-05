@@ -105,6 +105,51 @@ $(document).ready(function () {
         $("#whatever we want to display").append(newRow);
 
     });
+    
+//first API call grabbing player name, weight, height and country.
+var queryURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/golf-t2/profiles/pga/2017/players/profiles.JSON?api_key=nyj9hw5kb3r39sxjy2mxa7c9"
+var searchYear;
+var playerName ="";
+
+function clear(){
+    $("#searchName").empty();
+}
+
+$("search").on("click",function(event){
+event.preventDefault();
+clear();
+
+playerName = $("#searchName").val();
+playerName = str.split(" ");
+
+console.log(playerName)
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+})
+    .then(function (response) {
+
+        var players = response.players;
+
+        for (var i = 0; i < response.players.length; i++) {
+
+        console.log(players[i].first_name + " " + players[i].last_name + " Country:" + players[i].country + " Height:" + players[i].height + " Weight:" + players[i].weight);
+
+            if (players[i].first_name === "sam" && players[i].last_name === "Horsfield") {
+
+                $("#playersName").text(players[i].first_name + players[i].last_name)
+                $("#height").text(players[i].height);
+                $("#weight").text(players[i].weight);
+                $("#country").text(players[i].country);
+
+
+            }
+        };
+
+
+    });
+});
 
 
 
