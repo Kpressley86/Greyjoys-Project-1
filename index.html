@@ -5,67 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Pro Golf Statistics</title>
 
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
         </script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
         </script>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
         </script>
 
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    </link>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
 
     <!-- our js link -->
     <script src="./assets/javascript/app.js"></script>
-
-    <title>Home</title>
 </head>
 
 <body>
-    <div class="container-fluid"></div>
-        <div class="container-fluid bg-dark pt-4 pb-4">
-            <div class="row">
-                <div class="col-md-8">
-                    <h1 class="text-center text-white">PRO GOLF STATISTICS ⛳</h1>
-                </div>
+    <header class="container-fluid bg-dark pt-4 pb-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="text-center text-white">PRO GOLF STATISTICS ⛳</h1>
+            </div>
 
-                <div class="col-md-4">
-                    <div class="dropdown float-right pt-2 pr-2 ">
-                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Account Information
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Name</a>
-                            <a class="dropdown-item" href="#">Thing 1</a>
-                            <a class="dropdown-item" href="#">Thing 2</a>
-                        </div>
+            <div class="col-md-4">
+                <div class="dropdown float-right pt-2 pr-2 ">
+                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account Information
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Name</a>
+                        <a class="dropdown-item" href="#">Thing 1</a>
+                        <a class="dropdown-item" href="#">Thing 2</a>
                     </div>
                 </div>
             </div>
         </div>
+    </header>
+    <br>
+    <div class="container background-color-login" style="padding-top: 15px;">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2">
+                <!-- year input -->
+                <div class="form-group">
+                    <select class="form-control" id="searchYear">
+                        <option selected>2019</option>
+                        <option>2018</option>
+                        <option>2017</option>
+                    </select>
+                </div>
 
+            </div>
+            <div class="col-lg-6">
+                <!-- seach bar -->
+                <div class="form-group">
+                    <input type="text" class="form-control" id="searchName" placeholder="Search Golfer Name">
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <button type="submit" class="btn btn-secondary" id="search">Search</button>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
     </div>
-
-
-
 
 
 </body>
