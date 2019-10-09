@@ -33,7 +33,7 @@ const setupSearch = (data) => {
 
     proGolferSearch.innerHTML = html;
   } else {
-    proGolferSearch.innerHTML = ''
+   
   }
 };
 
