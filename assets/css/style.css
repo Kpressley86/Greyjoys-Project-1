@@ -9,6 +9,7 @@ h3 {
 
 header {
     background: rgba(0,0,0,0.9);
+
 }
 
 .greyjoy-footer {
@@ -33,6 +34,7 @@ h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 450%;
     font-weight: bold; 
+    text-shadow: 3px 3px grey;
 }
 
 table {
