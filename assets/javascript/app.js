@@ -70,20 +70,29 @@ $(document).ready(function () {
         
             for (var i = 0; i < res.length; i++) {
 
-                var tournamentName = $("<tr>").text(res[i].Name);
-                var tournmanetLocation = $("<td>").text(res[i].Location);
-                var courseSize = $("<td>").text(res[i].Yards);
-                var parScore = $("<td>").text(res[i].Par);
+                var tournamentName =(res[i].Name);
+                var tournmanetLocation =(res[i].Location);
+                var courseSize = (res[i].Yards);
+                var parScore = (res[i].Par);
 
                 if (res[i].IsOver === false) {
                     
-                let trElement = $("<tr>");
+                var trElement = $("<tr>");
+                var tdElement = $("<td>");
 
-                trElement.append(tournmanetName);
-                trElement.append(tournmanetLocation);
-                trElement.append(courseSize);
-                trElement.append(parScore);
 
+                let tournyName = $("<td>").text(tournamentName);
+                trElement.append(tournyName);
+
+
+                let theSize = $("<td>").text("Yards: " + courseSize);
+                trElement.append(theSize);
+
+
+                let locationElement = $("<td>").text(tournmanetLocation);
+                trElement.append(locationElement);
+
+                
                 $("#cool").append(trElement);
 
                 }
