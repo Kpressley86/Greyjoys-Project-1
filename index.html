@@ -87,19 +87,23 @@
     </header>
 
     <!-- Instructions Displayed when not logged in -->
+    <div class="row logged-out" style="display: none;"></div>
+    <div class="row logged-out" style="display: none;"></div>
+
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <div class="logged-out center-align text-light background-color-login pt-4 pb-4" style="display: none;">
+            <div class="logged-out center-align text-light background-color-login pt-4 pb-4 rounded" style="display: none;">
                 <h3>Please Login to Search Your Favorite Golfers</h3>
             </div>
         </div>
         <div class="col-md-3"></div>
     </div>
+    <div class="push logged-out" ></div>
 
     <br><br>
 
-    <div class="container rounded logged-in background-color-login pt-4 pb-3 pr-4 pl-4">
+    <div class="container rounded logged-in background-color-login pt-4 pb-3 pr-4 pl-4" style="display: none;">
 
         <!-- Row 1 : User Search Input -->
         <div class="row">
@@ -237,7 +241,7 @@
                     <input type="password" id="signup-password" required />
                     <label for="signup-password">Create Password</label>
                 </div>
-                <button class="btn green darken-3 z-depth-0">Sign Up</button>
+                <button class="btn btn-outline-light white-text darken-3 z-depth-0">Sign Up</button>
                 <p class="error pink-text center-align"></p>
             </form>
         </div>
@@ -256,7 +260,7 @@
                     <input type="password" id="login-password" required />
                     <label for="login-password">Your password</label>
                 </div>
-                <button class="btn green darken-3 z-depth-0">Login</button>
+                <button class="btn btn-outline-light white-text darken-3 z-depth-0">Login</button>
                 <p class="error pink-text center-align"></p>
             </form>
         </div>
