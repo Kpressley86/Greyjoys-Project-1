@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pro Golf Statistics</title>
+    <title>Golf Pro</title>
 
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css">
@@ -37,7 +37,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
         </script>
-          <!-- jQuery -->
+
+    <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Our js link -->
@@ -49,62 +50,83 @@
     <header class="container-fluid pt-4 pb-4" style="background: rgba(0,0,0,0.9);">
         <div class="row">
             <div class="col-md-8">
-                <h1 class="text-center text-white">PRO GOLF STATISTICS ⛳</h1>
+                <h1 class="text-right text-white">GOLF PRO 🏌️</h1>
             </div>
 
-            <!-- Nav display dependent on login status -->
-            <div class="nav-wrapper container">
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li class="logged-in" style="display: none;">
-                        <button class="btn btn-secondary grey-text" id="logout">Logout</button>
-                    </li>
-                    <li class="logged-out" style="display: none;">
-                        <button class="btn btn-secondary grey-text modal-trigger"
-                            data-target="modal-login">Login</button>
-                    </li>
-                    <li class="logged-out" style="display: none;">
-                        <button class="btn btn-secondary grey-text modal-trigger" data-target="modal-signup">Sign
-                            up</button>
-                    </li>
-                </ul>
+            <div class="col-md-4">
+                <div class="nav-wrapper container">
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                        <!-- Logout Button -->
+                        <li class="logged-in" style="display: none;">
+                            <button class="btn btn-outline-light white-text" id="logout">Logout</button>
+                        </li>
+                        <div class="row">
+                            <div class="col-md-5">
+
+                                <!-- Login Button -->
+                                <li class="logged-out" style="display: none;">
+                                    <button class="btn btn-outline-light white-text modal-trigger"
+                                        data-target="modal-login">Login</button>
+                                </li>
+                            </div>
+
+                            <!-- Sign Up Button -->
+                            <div class="col-md-7">
+                                <li class="logged-out" style="display: none;">
+                                    <button class="btn btn-outline-light white-text modal-trigger"
+                                        data-target="modal-signup">Sign
+                                        up</button>
+                                </li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
 
-    <br><br>
-
-    <div class=" col-lg-9 background-color-login">
-        <h3 class="logged-out center-align text-light" style="display: none;">Please Login to Search Your Favorite Golfers</h3>
+    <!-- Instructions Displayed when not logged in -->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="logged-out center-align text-light background-color-login pt-4 pb-4" style="display: none;">
+                <h3>Please Login to Search Your Favorite Golfers</h3>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
     </div>
 
     <br><br>
 
-    <div class="container logged-in background-color-login pt-4 pb-3">
+    <div class="container rounded logged-in background-color-login pt-4 pb-3 pr-4 pl-4">
 
         <!-- Row 1 : User Search Input -->
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-1"></div>
 
-                <!-- Coulmn 1 : year input -->
-                <div class="form-group">
-                    <select class="form-control" id="searchYear">
+            <!-- Coulmn 1 : year input -->
+            <div class="col-lg-2">
+                <div class="form-group white-text">
+                    <select class="form-control outline-light white-text pr-4 pl-4" style="background:rgba(0,0,0,0);"
+                        id="searchYear">
                         <option selected>2019</option>
                         <option>2018</option>
                         <option>2017</option>
                     </select>
                 </div>
             </div>
-            <div class="col-lg-8">
 
-                <!-- Column 2 : seach bar -->
+            <!-- Column 2 : Seach Bar -->
+            <div class="col-lg-7">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="searchName" placeholder="Search Golfer Name">
+                    <input type="text" class="form-control text-light" id="searchName" placeholder="Search Golfer Name">
                 </div>
             </div>
-            <div class="col-lg-1">
 
-                <!-- Column 3 : Search button -->
-                <button type="submit" class="btn btn-secondary" id="search">Search</button>
+            <!-- Column 3 : Search Button -->
+            <div class="col-lg-2">
+                <button type="submit" class="btn btn-outline-light white-text" id="search">Search</button>
             </div>
         </div>
 
@@ -115,35 +137,28 @@
         <div class="row">
 
             <!-- Column 1 : Player Image -->
-            <div class="col-md-3">
+            <div class="col-md-3 mb-4">
                 <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?v=1530129081"
                     alt="Player Image">
             </div>
 
+
             <!-- Column 2 : Player Info -->
-            <div class="col-md-9">
+            <div class="col-lg-3">
 
-                <!-- Row 1 : Table Titles -->
+                <!-- Row 2a : Table Title -->
                 <div class="row">
-                    <div class="col-lg-5">
-                        <div class="bg-light text-dark">
+                    <div class="col-lg-12">
+                        <div class="bg-light text-dark text-center pt-2 pb-1 rounded">
                             <h3>Golfer Information</h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-7">
-                        <div class="bg-light text-dark">
-                            <h3>Upcoming Tournaments</h3>
                         </div>
                     </div>
                 </div>
 
-                <!-- Row 2 : Tables -->
+                <!-- Row 2b : Table 1 : Golfer Stats -->
                 <div class="row">
-
-                    <!-- Table 1 : Golfer Stats -->
-                    <div class="col-lg-4">
-                        <table class="table table-hover">
+                    <div class="col-lg-12">
+                        <table class="table table-hover rounded">
                             <tbody>
                                 <tr>
                                     <th scope="row">Player Name:</th>
@@ -151,10 +166,10 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Height:</th>
-                                    <td id="height">0</td>
+                                    <td id="height"></td>
                                 <tr>
                                     <th scope="row">Weight:</th>
-                                    <td id="weight">0</td>
+                                    <td id="weight"></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Country:</th>
@@ -163,18 +178,42 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Table 2 : Upcoming Events -->
-                    <div class="col-md-8">
-                        <table class="table table-borderless">
+            <!-- Column 3 : Player Info -->
+            <div class="col-md-6">
+
+                <!-- Row 3a : Table Titles -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="bg-light text-dark text-center pt-2 pb-1 rounded">
+                            <h3>Upcoming Tournaments</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3b : Table 2 : Upcoming Events -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-borderless rounded">
                             <thead>
                                 <tr>
                                     <th scope="col">Tournament</th>
-                                    <th scope="col">Course Size</th>
                                     <th scope="col">Location</th>
+                                    <th scope="col">Par</th>
+                                    <th scope="col">Course Length</th>
+                                    <th scope="col">Purse</th>
                                 </tr>
                             </thead>
-                            <tbody id ="cool">
+                            <tbody>
+                                <tr>
+                                    <td>Masters</td>
+                                    <td>Augusta, GA</td>
+                                    <td>72</td>
+                                    <td>7865 Yards</td>
+                                    <td>$950,000</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -183,12 +222,7 @@
         </div>
     </div>
 
-
-    <!-- Footer -->
-    <!-- <footer class="footer greyjoy-footer">
-        <div class="container-fluid bg-dark text-light">&copy Copyright 2019</div>
-    </footer>
-    <br> -->
+    <br>
 
     <!-- SIGN UP MODAL -->
     <div id="modal-signup" class="modal">
@@ -208,6 +242,7 @@
             </form>
         </div>
     </div>
+
     <!-- LOGIN MODAL -->
     <div id="modal-login" class="modal">
         <div class="modal-content grey darken-3">
@@ -226,6 +261,11 @@
             </form>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid bg-dark text-light pt-4 pb-4">&copy Copyright 2019</div>
+    </footer>
 
     <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
@@ -256,6 +296,7 @@
         const functions = firebase.functions();
 
     </script>
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/javascript/auth.js"></script>
