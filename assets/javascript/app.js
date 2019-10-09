@@ -1,104 +1,47 @@
-$(document).ready(function () {
+body {
+    background-image: url("https://i.pinimg.com/originals/f2/56/fa/f256fa53f4a71faeafdc7d83ece05548.jpg");
+    background-size: cover; 
+    font-family: 'Roboto', sans-serif;
+}
+h3 {
+    font-family: 'Bitter', serif; font-size: 17pt;
+}
 
-    var searchYear = $("#searchYear").val();
+header {
+    background: rgba(0,0,0,0.9);
 
-    console.log(searchYear);
+}
 
+.greyjoy-footer {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    height: 60px; 
+    line-height: 60px;
+    background: rgba(0,0,0,0.9);
+}
+.background-color-login {
+    background: rgba(0,0,0,0.7);
+    
+    /* opacity: 0.7; */
+}
 
+form {
+    /* opacity: 0.1; */
+}
 
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 450%;
+    font-weight: bold; 
+    text-shadow: 3px 3px grey;
+}
 
-    //first API call grabbing player name, weight, height and country.
+table {
+    background-color: white;
+}
 
-    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/golf-t2/profiles/pga/2019/players/profiles.JSON?api_key=nyj9hw5kb3r39sxjy2mxa7c9"
-
-
-
-
-    $("#search").on("click", function () {
-        var playerName = $("#searchName").val().split(" ");
-
-        var firstNamer = playerName[0];
-        var lastNamer = playerName[1];
-
-
-
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        })
-
-            .then(function (response) {
-
-                var players = response.players;
-
-                for (var i = 0; i < response.players.length; i++) {
-
-                    //console.log(players[i].first_name + " " + players[i].last_name + " Country:" + players[i].country + " Height:" + players[i].height + " Weight:" + players[i].weight);
-
-                    if (players[i].first_name === firstNamer && players[i].last_name === lastNamer) {
-
-                        $("#playerName").text(players[i].first_name + " " + players[i].last_name)
-                        $("#height").text(players[i].height);
-                        $("#weight").text(players[i].weight);
-                        $("#country").text(players[i].country);
-
-
-                    }
-                    else {
-
-
-
-                    }
-                };
-
-
-            });
-
-
-
-    });
-
-
-    var queryURL3 = "https://api.sportsdata.io/golf/v2/json/Tournaments/2019?key=769b3cca2915407895d20432d46761ed"
-
-    $.ajax({
-        url: queryURL3,
-        method: "GET"
-
-    })
-        .then(function (res) {
-        
-            for (var i = 0; i < res.length; i++) {
-
-                var tournamentName =(res[i].Name);
-                var tournmanetLocation =(res[i].Location);
-                var courseSize = (res[i].Yards);
-                var parScore = (res[i].Par);
-
-                if (res[i].IsOver === false) {
-                    
-                var trElement = $("<tr>");
-                var tdElement = $("<td>");
-
-
-                let tournyName = $("<td>").text(tournamentName);
-                trElement.append(tournyName);
-
-
-                let theSize = $("<td>").text("Yards: " + courseSize);
-                trElement.append(theSize);
-
-
-                let locationElement = $("<td>").text(tournmanetLocation);
-                trElement.append(locationElement);
-
-                
-                $("#cool").append(trElement);
-
-                }
-            };
-
-        });
-
-
-});
+img {
+    height: 250px;
+    width: 250px;
+}

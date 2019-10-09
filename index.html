@@ -192,8 +192,8 @@
 
     <!-- SIGN UP MODAL -->
     <div id="modal-signup" class="modal">
-        <div class="modal-content">
-            <h4>Sign Up</h4><br />
+        <div class="modal-content grey darken-3">
+            <h4 style="color:white;">Sign Up</h4><br />
             <form id="signup-form">
                 <div class="input-field">
                     <input type="email" id="signup-email" required />
@@ -203,15 +203,15 @@
                     <input type="password" id="signup-password" required />
                     <label for="signup-password">Create Password</label>
                 </div>
-                <button class="btn yellow darken-2 z-depth-0">Sign Up</button>
+                <button class="btn green darken-3 z-depth-0">Sign Up</button>
                 <p class="error pink-text center-align"></p>
             </form>
         </div>
     </div>
     <!-- LOGIN MODAL -->
     <div id="modal-login" class="modal">
-        <div class="modal-content">
-            <h4>Login</h4><br />
+        <div class="modal-content grey darken-3">
+            <h4 style="color:white;">Login</h4><br />
             <form id="login-form">
                 <div class="input-field">
                     <input type="email" id="login-email" required />
@@ -221,28 +221,11 @@
                     <input type="password" id="login-password" required />
                     <label for="login-password">Your password</label>
                 </div>
-                <button class="btn yellow darken-2 z-depth-0">Login</button>
+                <button class="btn green darken-3 z-depth-0">Login</button>
                 <p class="error pink-text center-align"></p>
             </form>
         </div>
     </div>
-    <!-- CREATE SEARCH FORM MODAL -->
-    <div id="modal-create" class="modal">
-        <div class="modal-content">
-            <form id="create-form">
-                <div class="input-field">
-                    <input type="text" id="name" required>
-                    <label for="title">Player Name</label>
-                </div>
-                <div class="input-field">
-                    <textarea id="content" class="materialize-textarea" required></textarea>
-                    <label for="year">Year</label>
-                </div>
-                <button class="btn yellow darken-2 z-depth-0">Search</button>
-            </form>
-        </div>
-    </div>
-
 
     <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
