@@ -24,7 +24,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
 
-
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
@@ -39,22 +38,20 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
         </script>
 
-    <!-- jQuery -->
-
-
     <!-- Our js link -->
     <script src="./assets/javascript/app.js"></script>
 </head>
 
 <body>
+    <!-- Header -->
     <header class="container-fluid pt-4 pb-4" style="background: rgba(0,0,0,0.9);">
         <div class="row">
             <div class="col-md-8">
                 <h1 class="text-center text-white">PRO GOLF STATISTICS ⛳</h1>
             </div>
 
+            <!-- Nav display dependent on login status -->
             <div class="nav-wrapper container">
-
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li class="logged-in" style="display: none;">
                         <button class="btn btn-secondary grey-text" id="logout">Logout</button>
@@ -71,19 +68,22 @@
             </div>
         </div>
     </header>
-    <br>
-    <br>
 
-    <h3 class="logged-out center-align" style="display: none;">Please Login to Search Your Favorite Golfers</h3>
+    <br><br>
 
-    <br>
-    <br>
+    <div class=" col-lg-9 background-color-login">
+        <h3 class="logged-out center-align text-light" style="display: none;">Please Login to Search Your Favorite Golfers</h3>
+    </div>
+
+    <br><br>
+
     <div class="container logged-in background-color-login pt-4 pb-3">
 
+        <!-- Row 1 : User Search Input -->
         <div class="row">
-
             <div class="col-lg-3">
-                <!-- year input -->
+
+                <!-- Coulmn 1 : year input -->
                 <div class="form-group">
                     <select class="form-control" id="searchYear">
                         <option selected>2019</option>
@@ -91,32 +91,35 @@
                         <option>2017</option>
                     </select>
                 </div>
-
             </div>
             <div class="col-lg-8">
-                <!-- seach bar -->
+
+                <!-- Column 2 : seach bar -->
                 <div class="form-group">
                     <input type="text" class="form-control" id="searchName" placeholder="Search Golfer Name">
                 </div>
             </div>
             <div class="col-lg-1">
+
+                <!-- Column 3 : Search button -->
                 <button type="submit" class="btn btn-secondary" id="search">Search</button>
             </div>
         </div>
 
         <br>
         <br>
+
+        <!-- Row 2 : Player Information -->
         <div class="row">
 
+            <!-- Column 1 : Player Image -->
             <div class="col-md-3">
                 <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?v=1530129081"
                     alt="Player Image">
             </div>
 
+            <!-- Column 2 : Player Info -->
             <div class="col-md-9">
-                <!-- <table class="table table-borderless"> -->
-                <!-- golfer information table -->
-                <!-- Column 2 : Player Info -->
 
                 <!-- Row 1 : Table Titles -->
                 <div class="row">
@@ -125,14 +128,18 @@
                             <h3>Golfer Information</h3>
                         </div>
                     </div>
+
                     <div class="col-lg-7">
                         <div class="bg-light text-dark">
                             <h3>Upcoming Tournaments</h3>
                         </div>
                     </div>
                 </div>
-                <!-- Row 2 Tables -->
+
+                <!-- Row 2 : Tables -->
                 <div class="row">
+
+                    <!-- Table 1 : Golfer Stats -->
                     <div class="col-lg-5">
                         <table class="table table-hover">
                             <tbody>
@@ -154,6 +161,8 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <!-- Table 2 : Upcoming Events -->
                     <div class="col-md-7">
                         <table class="table table-borderless">
                             <thead>
@@ -164,21 +173,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <tr>
-                                    <!-- <th scope="row">1</th> -->
                                     <td>Masters</td>
                                     <td>Aug 2020</td>
                                     <td>Augusta, GA, USA</td>
                                 </tr>
                                 <tr>
-                                    <!-- <th scope="row">2</th> -->
                                     <td>St. Jude Classic</td>
                                     <td>June 2020</td>
                                     <td>Memphis, TN, USA</td>
                                 </tr>
                                 <tr>
-                                    <!-- <th scope="row">3</th> -->
                                     <td>Waste Management Open</td>
                                     <td>October 2020</td>
                                     <td>Phoenix, AZ, USA</td>
@@ -187,25 +192,16 @@
                         </table>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
-
     </div>
-    </div>
-    <br>
-    <br>
-    <!-- Row 2 : Golfer Information -->
 
+
+    <!-- Footer -->
+    <footer class="footer greyjoy-footer">
+        <div class="container-fluid bg-dark text-light">&copy Copyright 2019</div>
+    </footer>
     <br>
-
-    <!-- <footer class="footer greyjoy-footer">
-            <div class="container-fluid bg-dark text-light">&copy Copyright 2019</div>
-        </footer>
-        <br> -->
-
 
     <!-- SIGN UP MODAL -->
     <div id="modal-signup" class="modal">
@@ -260,6 +256,8 @@
         </div>
     </div>
 
+
+    <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-firestore.js"></script>
