@@ -29,7 +29,7 @@ $(document).ready(function () {
         })
 
             .then(function (response) {
-                
+
                 var players = response.players;
 
                 for (var i = 0; i < response.players.length; i++) {
@@ -99,24 +99,44 @@ $(document).ready(function () {
 
 
 
-// NEW YOUR TIMES API CALL //
+        // NEW YOUR TIMES API CALL //
 
-        let year = $("#searchYear").val();
-        let name = $("#searchName").val();
 
-        let key = "QDzGqfGGE5zww8ffy7tJbwUhXTMaaoxE"
-        let queryURLNYT = `https://api.nytimes.com/svc/topstories/v2/articlesearch.json?api-key=${key}&start_date=${year+"0110"}&q=${name}`
+
+        //playerName = playerName.replace(" ", "+");
+
+        let key = "t7L4fRfqSRx96gkzHLXA4s2ibVdaGXfA"
+        let queryURLNYT = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${playerName}&limit={1}`
 
         $.ajax({
             url: queryURLNYT,
             method: "GET"
         })
-        
-        .then(function (response) {
 
-            console.log(response);
+            .then(function (r) {
 
-        });
+                let results = r.data;
+
+                console.log(results[0].images);
+
+                $('#playerImg').attr('src', results[0].images.fixed_height_still.url)
+                    .attr('data-still', results[0].images.fixed_height_still.url)
+                    .attr('data-animate', results[0].images.fixed_height.url)
+                    .attr('data-state', 'still')
+                    .addClass('cover')
+                    .on('click', function () {
+                        var state = $(this).data('state');
+                        if (state == 'still') {
+                            $(this).data('state', 'animate');
+                            $(this).attr('src', $(this).data('animate'));
+                        }
+                        else {
+                            $(this).data('state', 'still');
+                            $(this).attr('src', $(this).data('still'));
+                        }
+                    });
+                
+            });
 
     });
 
