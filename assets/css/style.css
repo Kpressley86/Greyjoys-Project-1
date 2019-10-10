@@ -1,6 +1,8 @@
 body {
     background-image: url("https://i.pinimg.com/originals/f2/56/fa/f256fa53f4a71faeafdc7d83ece05548.jpg");
     background-size: cover; 
+    background-repeat:   no-repeat;
+    background-position: center center;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -39,4 +41,8 @@ table {
 img {
     height: 250px;
     width: 250px;
+}
+
+#infoContainer {
+    margin-bottom: 190px;
 }
