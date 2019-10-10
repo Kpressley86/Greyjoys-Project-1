@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     //first API call grabbing player name, weight, height and country.
 
-    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/golf-t2/profiles/pga/2019/players/profiles.JSON?api_key=nyj9hw5kb3r39sxjy2mxa7c9"
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/golf-t2/profiles/pga/2019/players/profiles.JSON?api_key=c9e65kafbe4az5dtnuyvue8z"
 
 
 
@@ -117,7 +117,6 @@ $(document).ready(function () {
 
                 let results = r.data;
 
-                console.log(results[0].images);
 
                 $('#playerImg').attr('src', results[0].images.fixed_height_still.url)
                     .attr('data-still', results[0].images.fixed_height_still.url)
