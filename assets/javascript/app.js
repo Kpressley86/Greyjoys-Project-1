@@ -118,22 +118,10 @@ $(document).ready(function () {
                 let results = r.data;
 
 
-                $('#playerImg').attr('src', results[0].images.fixed_height_still.url)
-                    .attr('data-still', results[0].images.fixed_height_still.url)
+                $('#playerImg').attr('src', results[0].images.fixed_height.url)
                     .attr('data-animate', results[0].images.fixed_height.url)
-                    .attr('data-state', 'still')
                     .addClass('cover')
-                    .on('click', function () {
-                        var state = $(this).data('state');
-                        if (state == 'still') {
-                            $(this).data('state', 'animate');
-                            $(this).attr('src', $(this).data('animate'));
-                        }
-                        else {
-                            $(this).data('state', 'still');
-                            $(this).attr('src', $(this).data('still'));
-                        }
-                    });
+                    
                 
             });
 
