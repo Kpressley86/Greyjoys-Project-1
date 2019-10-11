@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     //first API call grabbing player name, weight, height and country.
 
-    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/golf-t2/profiles/pga/2019/players/profiles.JSON?api_key=nyj9hw5kb3r39sxjy2mxa7c9"
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.sportradar.us/golf-t2/profiles/pga/2019/players/profiles.JSON?api_key=c9e65kafbe4az5dtnuyvue8z"
 
 
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
         })
 
             .then(function (response) {
-                
+
                 var players = response.players;
 
                 for (var i = 0; i < response.players.length; i++) {
@@ -99,24 +99,31 @@ $(document).ready(function () {
 
 
 
-// NEW YOUR TIMES API CALL //
+        // NEW YOUR TIMES API CALL //
 
-        let year = $("#searchYear").val();
-        let name = $("#searchName").val();
 
-        let key = "QDzGqfGGE5zww8ffy7tJbwUhXTMaaoxE"
-        let queryURLNYT = `https://api.nytimes.com/svc/topstories/v2/articlesearch.json?api-key=${key}&start_date=${year+"0110"}&q=${name}`
+
+        //playerName = playerName.replace(" ", "+");
+
+        let key = "t7L4fRfqSRx96gkzHLXA4s2ibVdaGXfA"
+        let queryURLNYT = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${playerName}&limit={1}`
 
         $.ajax({
             url: queryURLNYT,
             method: "GET"
         })
-        
-        .then(function (response) {
 
-            console.log(response);
+            .then(function (r) {
 
-        });
+                let results = r.data;
+
+
+                $('#playerImg').attr('src', results[0].images.fixed_height.url)
+                    .attr('data-animate', results[0].images.fixed_height.url)
+                    .addClass('cover')
+                    
+                
+            });
 
     });
 

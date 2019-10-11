@@ -93,7 +93,8 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <div class="logged-out center-align text-light background-color-login pt-4 pb-4 rounded" style="display: none;">
+
+            <div class="logged-out message center-align text-light background-color-login pt-4 pb-4 rounded" style="display: none;">
                 <h3>Please Login to Search Your Favorite Golfers</h3>
             </div>
         </div>
@@ -103,7 +104,7 @@
 
     <br><br>
 
-    <div class="container rounded logged-in background-color-login pt-4 pb-3 pr-4 pl-4" style="display: none;">
+    <div id="infoContainer" class="container rounded logged-in background-color-login pt-4 pb-3 pr-4 pl-4" style="display: none;">
 
         <!-- Row 1 : User Search Input -->
         <div class="row">
@@ -142,10 +143,10 @@
 
             <!-- Column 1 : Player Image -->
             <div class="col-md-3 mb-4">
-                <img src="https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?v=1530129081"
+                <img id="playerImg"
+                    src="https://www.clipartwiki.com/clipimg/detail/166-1666331_golf-ball-png-golf-balls-no-background.png"
                     alt="Player Image">
             </div>
-
 
             <!-- Column 2 : Player Info -->
             <div class="col-lg-3">
@@ -228,6 +229,11 @@
 
     <br>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid bg-dark text-light pt-4 pb-4">&copy Copyright 2019</div>
+    </footer>
+
     <!-- SIGN UP MODAL -->
     <div id="modal-signup" class="modal">
         <div class="modal-content grey darken-3">
@@ -265,11 +271,6 @@
             </form>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container-fluid bg-dark text-light pt-4 pb-4">&copy Copyright 2019</div>
-    </footer>
 
     <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
