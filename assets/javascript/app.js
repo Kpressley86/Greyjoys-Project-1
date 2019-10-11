@@ -71,6 +71,8 @@ $(document).ready(function () {
                     var tournmanetLocation = (res[i].Location);
                     var courseSize = (res[i].Yards);
                     var parScore = (res[i].Par);
+                    var purseMoney = (res[i].Purse);
+                    
 
                     if (res[i].IsOver === false) {
 
@@ -81,14 +83,24 @@ $(document).ready(function () {
                         let tournyName = $("<td>").text(tournamentName);
                         trElement.append(tournyName);
 
-
-                        let theSize = $("<td>").text("Yards: " + courseSize);
-                        trElement.append(theSize);
-
-
+                        
                         let locationElement = $("<td>").text(tournmanetLocation);
                         trElement.append(locationElement);
 
+
+                        let thePar = $("<td>").text(parScore);
+                        trElement.append(thePar);
+
+                        let theSize = $("<td>").text(courseSize +" yds");
+                        trElement.append(theSize);
+
+                        let moneyBby =  $("<td>").text("$" + purseMoney);
+                        trElement.append(moneyBby);
+
+                        
+
+
+                        
 
                         $("#cool").append(trElement);
 
